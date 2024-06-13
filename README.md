@@ -43,3 +43,10 @@ GROUP BY order_day
 SELECT ROUND(SUM(quantity) / COUNT(DISTINCT order_id), 2) AS Avg_Pizza
 
 FROM `pizzasales.pizzasales`
+
+
+
+SELECT
+  FORMAT_DATE('%B', CAST(order_date AS DATE)) AS order_day, COUNT(DISTINCT order_id) AS Total_Orders
+FROM `pizzasales.pizzasales`
+GROUP BY order_day
